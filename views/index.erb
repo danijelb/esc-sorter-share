@@ -1,14 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>ESC Sorter Social Media Share</title>
-</head>
-<body>
+<div class="explanation">
   <h1>ESC Sorter Social Media Share</h1>
-  <form action="/share" method="post">
-    <label for="share_code">Share code from Mr. Gerbear's site:</label>
-    <input type="text" name="share_code" />
-    <input type="submit" value="Generate" />
-  </form>
-</body>
-</html>
+  <p>
+    You've spent a couple of hours sorting and ranking this year's 
+    Eurovision songs on Mr. Gerbear's Eurovision Sorter? If you'd like 
+    to share your results on your Instagram story or a similar mobile 
+    format, this website can help you generate an image of appropriate 
+    format and size.
+  </p>
+  <h3>How to share?</h3>
+  <p class="nomargin">
+    After you're done sorting on Mr. Gerbear's site, click the checkbox 
+    that says <strong>Show Eurovision (un)Official Discord code?</strong>
+    Below that you will find a code that starts with
+  </p>
+  <pre>!submit 2023 ...</pre>
+  <p>
+    Copy that code into the box below and press the Generate button.
+  </p>
+</div>
+<form action="/share" method="post">
+  <label for="share_code">Paste the Discord code here:</label>
+  <input type="text" name="share_code" class="inputtext" placeholder="Discord code" />
+  <input type="submit" value="Generate image for sharing" class="inputsubmit" />
+</form>

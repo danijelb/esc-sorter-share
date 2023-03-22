@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.container {
+  width: 700px;
+  background-color: #FFF800;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 40px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-size: 1.5rem;
+}
+
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  z-index: 10;
+  background: linear-gradient(to right, 
+    #0043FE, #0043FE 33.333%, 
+    #02015E 33.333%, #02015E 66.666%, 
+    #FF0087 66.666%, #FF0087 100%
+  );
+}
+
+.container::before {
+  left: 0;
+  right: auto;
+}
+
+.container::after {
+  left: auto;
+  right: 0;
+}
+
+.container > header img.title-img {
+  width: 100%;
+}
+
+.container footer p {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.content {
+  padding: 15px;
+}
+
+.explanation h1 {
+  font-size: 1.9rem;
+}
+
+.explanation p {
+  margin-bottom: 0.75rem;
+}
+
+.explanation p.nomargin {
+  margin-bottom: 0;
+}
+
+.explanation pre {
+  display: inline;
+}
+
+form {
+  text-align: center;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+}
+
+form input {
+  font-family: "Noto Sans", sans-serif;
+}
+
+form input.inputtext {
+  width: 100%;
+  box-sizing: border-box;
+  border: 5px solid #0043FE;
+  font-size: 1.5rem;
+  padding: 1rem;
+  outline: 0;
+}
+
+form input.inputtext:focus {
+  border-color: red;
+}
+
+form input.inputsubmit {
+  font-size: 1.9rem;
+  background-color: #0043FE;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  margin: 0.5rem;
+}
+
+
+@media screen and (max-width: 699px) {
+  .container {
+    width: 100%;
+  }
+}

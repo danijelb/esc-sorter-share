@@ -1,4 +1,6 @@
 require 'sinatra'
+require 'imgkit'
+require 'base64'
 require './songs'
 require './countries'
 
@@ -25,11 +27,20 @@ get '/share/:year/:order' do
 
   # Proceed only if all countries are present in the list
   if songs.length == song_list.length
-    output_arr = songs.map { |country| 
-      "#{song_list.dig country.to_sym, :artist} - #{song_list.dig country.to_sym, :song}\n"
-    }
+    @songs = songs.map do |country|
+      {
+        :artist => song_list.dig(country.to_sym, :artist),
+        :song => song_list.dig(country.to_sym, :song),
+        :country => COUNTRIES[country.to_sym]
+      }
+    end
 
-    output_arr
+    kit = IMGKit.new(erb(:image, layout: false), :quality => 90)
+    kit.stylesheets << 'public/css/image.css'
+
+    @img = Base64.encode64(kit.to_img)
+
+    erb :share
   else
     "Share code not valid"
   end

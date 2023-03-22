@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+</head>
+<body>
+  <h3>this will be the image</h3>
+  <img src="public/images/banner.jpg" class="title-img" />
+
+  <div class="song_list">
+    <div class="first song">
+      <div class="order">1</div>
+      <h2><%= @songs.first[:country] %></h2>
+      <p><%= @songs.first[:artist] %></p>
+      <p><%= @songs.first[:song] %></p>
+    </div>
+
+    <div class="songs">
+      <% first_half, second_half = @songs[1..-1].each_slice(@songs.size/2).to_a %>
+
+      <div class="column first">
+        <% first_half.each_with_index do |song, index| %>
+          <div class="song">
+            <div class="order"><%= index + 2 %></div>
+            <h2><%= song[:country] %></h2>
+            <p><%= song[:artist] %></p>
+            <p><%= song[:song] %></p>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="column second">
+        <% second_half.each_with_index do |song, index| %>
+          <div class="song">
+            <div class="order"><%= index + 2 + first_half.size %></div>
+            <h2><%= song[:country] %></h2>
+            <p><%= song[:artist] %></p>
+            <p><%= song[:song] %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

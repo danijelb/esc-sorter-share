@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 1080px;
+  height: 1920px;
+  background: #FFF800;
+  box-sizing: border-box;
+}
+
+.song_list {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.song_list .song {
+  background: #0043FE;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  position: relative;
+  height: 80px;
+  padding-left: 100px;
+}
+
+.song .order {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background-color: #02015E;
+  color: #FFF800;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.songs {
+  overflow: hidden;
+}
+
+.songs .column {
+  float: left;
+}
+
+.songs .column.first {
+  margin-right: 10px;
+}
+
+.songs .song {
+  width: 475px;
+  margin-bottom: 15px;
+}
