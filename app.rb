@@ -4,6 +4,10 @@ require 'base64'
 require './songs'
 require './countries'
 
+IMGKit.configure do |config|
+  config.wkhtmltoimage = File.dirname(__FILE__) + '/bin/wkhtmltoimage-amd64'
+end  
+
 get '/' do
   erb :index
 end

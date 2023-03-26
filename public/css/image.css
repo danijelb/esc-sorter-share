@@ -8,49 +8,64 @@ body {
   height: 1920px;
   background: #FFF800;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .song_list {
-  width: 1000px;
+  width: 955px;
   margin: 0 auto;
 }
 
 .song_list .song {
   background: #0043FE;
   color: white;
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin-bottom: 5px;
   box-sizing: border-box;
   position: relative;
-  height: 80px;
-  padding-left: 100px;
+  height: 95px;
+  padding-left: 80px;
 }
 
 .song .order {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 95px;
   background-color: #02015E;
   color: #FFF800;
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
+  text-align: center;
+  line-height: 95px;
 }
 
 .songs {
   overflow: hidden;
-}
-
-.songs .column {
-  float: left;
-}
-
-.songs .column.first {
-  margin-right: 10px;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .songs .song {
-  width: 475px;
+  width: 305px;
   margin-bottom: 15px;
+}
+
+.song-info .title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.song-info .artist {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.title-img {
+  width: 1080px;
 }
